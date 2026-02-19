@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Student Tree View -->
+    <record id="view_student_internship_student_tree" model="ir.ui.view">
+        <field name="name">student.internship.student.tree</field>
+        <field name="model">student.internship.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="email"/>
+                <field name="class_name"/>
+                <field name="internship_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Student Form View -->
+    <record id="view_student_internship_student_form" model="ir.ui.view">
+        <field name="name">student.internship.student.form</field>
+        <field name="model">student.internship.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="student_id"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="class_name"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Internships">
+                            <field name="internship_ids">
+                                <tree>
+                                    <field name="company_id"/>
+                                    <field name="supervisor_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Student Action -->
+    <record id="action_student_internship_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">student.internship.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first student
+            </p>
+            <p>
+                Click the create button to register a new student in the system.
+            </p>
+        </field>
+    </record>
+</odoo>

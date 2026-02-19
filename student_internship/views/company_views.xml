@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Company Tree View -->
+    <record id="view_student_internship_company_tree" model="ir.ui.view">
+        <field name="name">student.internship.company.tree</field>
+        <field name="model">student.internship.company</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="address"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="internship_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Company Form View -->
+    <record id="view_student_internship_company_form" model="ir.ui.view">
+        <field name="name">student.internship.company.form</field>
+        <field name="model">student.internship.company</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Internships">
+                            <field name="internship_ids">
+                                <tree>
+                                    <field name="student_id"/>
+                                    <field name="supervisor_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Company Action -->
+    <record id="action_student_internship_company" model="ir.actions.act_window">
+        <field name="name">Companies</field>
+        <field name="res_model">student.internship.company</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first company
+            </p>
+            <p>
+                Click the create button to register a new company in the system.
+            </p>
+        </field>
+    </record>
+</odoo>

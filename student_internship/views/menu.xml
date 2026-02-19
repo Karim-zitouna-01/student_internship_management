@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root Menu -->
+    <menuitem id="menu_internship_root"
+              name="Internship Management"
+              sequence="10"/>
+
+    <!-- Students Menu -->
+    <menuitem id="menu_internship_students"
+              name="Students"
+              parent="menu_internship_root"
+              action="action_student_internship_student"
+              sequence="10"/>
+
+    <!-- Companies Menu -->
+    <menuitem id="menu_internship_companies"
+              name="Companies"
+              parent="menu_internship_root"
+              action="action_student_internship_company"
+              sequence="20"/>
+
+    <!-- Supervisors Menu -->
+    <menuitem id="menu_internship_supervisors"
+              name="Supervisors"
+              parent="menu_internship_root"
+              action="action_student_internship_supervisor"
+              sequence="30"/>
+
+    <!-- Internships Menu -->
+    <menuitem id="menu_internship_internships"
+              name="Internships"
+              parent="menu_internship_root"
+              action="action_student_internship_internship"
+              sequence="40"/>
+</odoo>

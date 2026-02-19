@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Supervisor Tree View -->
+    <record id="view_student_internship_supervisor_tree" model="ir.ui.view">
+        <field name="name">student.internship.supervisor.tree</field>
+        <field name="model">student.internship.supervisor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="department"/>
+                <field name="internship_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Supervisor Form View -->
+    <record id="view_student_internship_supervisor_form" model="ir.ui.view">
+        <field name="name">student.internship.supervisor.form</field>
+        <field name="model">student.internship.supervisor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="department"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Internships">
+                            <field name="internship_ids">
+                                <tree>
+                                    <field name="student_id"/>
+                                    <field name="company_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Supervisor Action -->
+    <record id="action_student_internship_supervisor" model="ir.actions.act_window">
+        <field name="name">Supervisors</field>
+        <field name="res_model">student.internship.supervisor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first supervisor
+            </p>
+            <p>
+                Click the create button to register a new supervisor in the system.
+            </p>
+        </field>
+    </record>
+</odoo>

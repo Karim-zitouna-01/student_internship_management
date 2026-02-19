@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_internship_student,access.student.internship.student,model_student_internship_student,base.group_user,1,1,1,1
+access_student_internship_company,access.student.internship.company,model_student_internship_company,base.group_user,1,1,1,1
+access_student_internship_supervisor,access.student.internship.supervisor,model_student_internship_supervisor,base.group_user,1,1,1,1
+access_student_internship_internship,access.student.internship.internship,model_student_internship_internship,base.group_user,1,1,1,1
